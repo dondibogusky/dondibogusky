@@ -1,0 +1,10 @@
+.config-codekit3
+.DS_Store
+build/
+node_modules/
+package-lock.json
+reports/
+source/BingSiteAuth.xml
+source/img/
+webpack.config.js
+yarn.lock
