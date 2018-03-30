@@ -8,3 +8,4 @@ source/BingSiteAuth.xml
 source/img/
 webpack.config.js
 yarn.lock
+/.config.codekit3
