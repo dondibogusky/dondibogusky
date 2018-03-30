@@ -1,0 +1,13 @@
+{
+  "banner": false,
+  "media": [
+    "(min-width: 320px) handheld and (orientation: landscape)",
+    "(min-width: 320px) handheld and (orientation: portrait)",
+    "(min-width: 576px)",
+    "(min-width: 768px)",
+    "(min-width: 992px)",
+    "(min-width: 1200px)"
+  ],
+  "report": false,
+  "timeout": 1000
+}
