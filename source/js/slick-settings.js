@@ -3,11 +3,12 @@ $(document).ready(function(){
     autoplay: true,
     autoplaySpeed: 3000,
     cssEase: 'cubic-bezier(0.680, -0.550, 0.265, 1.550)',
-    infinite: true,
-    mobileFirst: true,
+    easing: 'swing',
+    focusOnSelect: true,
     lazyLoad: 'ondemand',
-    speed: 300,
-    variableWidth: false,
+    mobileFirst: true,
+    nextArrow: '<button type="button" class="slick-next">Next</button>',
+    prevArrow: '<button type="button" class="slick-prev">Previous</button>',
     responsive: [
       {
         breakpoint: 1199,
@@ -33,6 +34,7 @@ $(document).ready(function(){
           slidesToShow: 1
         }
       }
-    ]
+    ],
+    speed: 250
   });
 });
