@@ -11,17 +11,25 @@
   Options -Indexes
 </IfModule>
 <IfModule mod_headers.c>
-  Header always set Strict-Transport-Security "max-age=63072000; includeSubdomains;"
   Header always set X-Frame-Options SAMEORIGIN
-  Header set Access-Control-Allow-Origin "*"
-  Header set Content-Security-Policy "\
-    default-src 'none';\
-    font-src dondibogusky.com fonts.gstatic.com;\
-    frame-src dondibogusky.com platform.twitter.com;\
-    img-src data: dondibogusky.com i.ytimg.com stats.g.doubleclick.net www.google-analytics.com www.googletagmanager.com;\
-    script-src 'unsafe-inline' dondibogusky.com code.jquery.com use.fontawesome.com www.google-analytics.com www.googletagmanager.com ajax.googleapis.com platform.twitter.com;\
-    style-src 'unsafe-inline' dondibogusky.com fonts.googleapis.com"
+  Header set Access-Control-Allow-Origin https://dondibogusky.com
+  Header set Referrer-Policy same-origin
+  Header set Strict-Transport-Security "max-age=63072000; includeSubdomains;" env=HTTPS
+  Header set Vary Origin
   Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+<IfModule mod_headers.c>
+  Header set Content-Security-Policy "\
+    default-src ;\
+    base-uri 'self';\
+    font-src 'self' https://fonts.gstatic.com;\
+    form-action 'self';\
+    frame-ancestors 'none';\
+    frame-src 'self' https://platform.twitter.com;\
+    img-src 'self' data: https://i.ytimg.com https://stats.g.doubleclick.net https://www.google-analytics.com https://www.googletagmanager.com;\
+    object-src 'none';\
+    script-src 'self' https://code.jquery.com https://use.fontawesome.com https://www.google-analytics.com https://www.googletagmanager.com/gtag/js https://www.googletagmanager.com/gtm.js https://ajax.googleapis.com https://platform.twitter.com 'sha256-cWq/MoHnC3rdTYhrBfDu59doEyAZHX4k56UrmN3cFiM=' 'sha256-evz5Hv4VNkw3MmX+tZb75ljXU38Rm11E85x2ExlGTfM=' 'sha256-QnSXIkRxvs0w/hJ9VDeLbBG3ivUDQxyjk4OdrrJd/1s=' 'sha256-8QW7Lr6UbUrXlB1azrBakYA/2kZfxwa9brTTtVkC9dg=' 'sha256-9/5YT2ZmRnl+RgEgOcwKb09KYZ65hYlBmW3Hnsa/9LU=' 'sha256-Cu3Qu/BQoCpZt92yN04GGHg5dexLMgx42fvCYOF19ww=' 'sha256-m1CtHI92UmaOHRBXormHu/6QEkudskHiek4L59+lHeg=' 'sha256-K0ZFL1u/pF6SvId+XmKpD5gPcuT9ftetHpAsZFliko0=' 'sha256-BGgnGCcsMPmtBT3lFtmnV9sCa7OvtTvD0IfYyIIiTpw=' 'sha256-PIx43kaIMxA4i2HzzeKU+8H65hpTHzT3YhadngXC9M8=';\
+    style-src 'self' https://use.fontawesome.com https: https://fonts.googleapis.com 'sha256-XG/kZEuMexJnKxWU9PhkQXr+2ImLpnINQhLDYFSNrw4=' 'sha256-sC9roG6gjsOxA1jz9CZn8bm+B+LEew4Jef0kbhK/zYY=' 'sha256-+5pErX1Ry6fZtjCK9o3yk9BOud2PeksUmXxi6q9MnO0=' 'sha256-cWq/MoHnC3rdTYhrBfDu59doEyAZHX4k56UrmN3cFiM=' 'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=' 'sha256-qjhGsGw/991oxZHLvOTMZTAPIPBtoh3oEIuYckAI1eA=' 'sha256-sKzaiJrJyJMbRx9E5at9V94KO1buQ74A6k1sC3iSEUI=' 'sha256-bviLPwiqrYk7TOtr5i2eb7I5exfGcGEvVuxmITyg//c=' 'sha256-4NRibc1ERoF9CamRV3seWWA1si9WoUButIBbHH1DkR8=' 'sha256-jo6xU8LZ37B95oD5/PHtkicbZfpIn6aJPu4uG7C5oGI=';"
   <FilesMatch "404.html">
     Header set Content-Security-Policy "\
       default-src 'none';\
@@ -64,14 +72,14 @@ Options -MultiViews
 </IfModule>
 <IfModule mod_expires.c>
   ExpiresActive On
-  ExpiresDefault "access plus 1 week"
-  ExpiresByType image/x-icon "access plus 1 week"
-  ExpiresByType image/gif "access plus 1 week"
-  ExpiresByType image/png "access plus 1 week"
-  ExpiresByType image/jpg "access plus 1 week"
-  ExpiresByType text/css "access 1 week"
-  ExpiresByType application/javascript "access plus 1 week"
-  ExpiresByType application/x-javascript "access plus 1 week"
+  ExpiresDefault "access plus 30 days"
+  ExpiresByType image/x-icon "access plus 30 days"
+  ExpiresByType image/gif "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/jpg "access plus 30 days"
+  ExpiresByType text/css "access plus 30 days"
+  ExpiresByType application/javascript "access plus 30 days"
+  ExpiresByType application/x-javascript "access plus 30 days"
 </IfModule>
 
 # Rewrites
