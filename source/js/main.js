@@ -17,16 +17,27 @@
   }
 }());
 
-document.body.className = document.body.className.replace("preload ","");
+window.addEventListener('load',
+  function load() {
+    window.removeEventListener('load', load, false);
+    document.body.classList.remove('preload');
+    document.body.className.replace('preload ','');
+  },
+false);
 
-if (typeof jQuery !== 'undefined') {
-  jQuery.event.special.touchstart = {
-    setup: function( _, ns, handle ){
-      if ( ns.includes("noPreventDefault") ) {
-        this.addEventListener("touchstart", handle, { passive: false });
-      } else {
-        this.addEventListener("touchstart", handle, { passive: true });
-      }
+document.getElementById('contact').innerHTML = '\u0068\u0065\u006c\u006c\u006f\u0040\u0064\u006f\u006e\u0064\u0069\u002e\u006f\u0069\u0062\u002e\u0063\u006f\u006d';
+
+// Test via a getter in the options object to see if the passive property is accessed
+var supportsPassive = false;
+try {
+  var opts = Object.defineProperty({}, 'passive', {
+    get: function() {
+      supportsPassive = true;
     }
-  };
-}
+  });
+  window.addEventListener("testPassive", null, opts);
+  window.removeEventListener("testPassive", null, opts);
+} catch (e) {}
+
+// Use our detect's results. passive applied if supported, capture will be false either way.
+elem.addEventListener('touchstart', fn, supportsPassive ? { passive: true } : false);
