@@ -1,0 +1,79 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.blur-up {
+  /* stylelint-disable plugin/no-unsupported-browser-features */
+  // Progressive enhansment nice to have filter
+  filter: blur(10px);
+  opacity: 0;
+  /* stylelint-enable */
+  transition: filter opacity 300ms;
+
+  &.lazyloading,
+  &.lazyloaded {
+    /* stylelint-disable plugin/no-unsupported-browser-features */
+    // Progressive enhansment nice to have filter
+    filter: blur(0);
+    opacity: 1;
+    /* stylelint-enable */
+  }
+}
+
+.fade-in {
+  animation: fade-in ease-in 1;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+
+  &.footer {
+    animation-duration: 0.25s;
+  }
+}
+
+.preload * {
+  transition: none !important;
+}
+
+::selection {
+  // background-color: $color-light-blue;
+  background-color: lighten($color-blue, 50%);
+  text-shadow: none;
+}
+
+@at-root {
+  @viewport {
+    width: device-width;
+  }
+}
+
+@keyframes fade-in {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* stylelint-disable plugin/no-unsupported-browser-features */
+@media screen and (min-resolution: 2dppx) {
+
+  body {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+/* stylelint-enable */
+
+[tabindex='-1']:focus {
+  /* stylelint-disable plugin/no-unsupported-browser-features */
+  outline: 0 !important;
+  /* stylelint-enable */
+}

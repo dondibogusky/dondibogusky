@@ -1,0 +1,21 @@
+.hidden {
+  display: none !important;
+}
+
+.obfuscate {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  left: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  top: 1px;
+  width: 1px;
+}

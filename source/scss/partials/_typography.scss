@@ -1,0 +1,149 @@
+a {
+  background-color: transparent;
+  color: $color-blue;
+  text-decoration: none;
+  text-decoration-skip: leading-spaces trailing-spaces objects;
+
+  &:hover {
+    color: tomato;
+    text-decoration: underline transparentize($color-blue, 0.5) solid;
+  }
+
+  &:focus {
+    /* stylelint-disable plugin/no-unsupported-browser-features */
+    outline: $color-tomato solid 1px;
+    /* stylelint-enable */
+  }
+
+  &:not([href]):not([tabindex]) {
+    color: inherit;
+    text-decoration: none;
+
+    &:active,
+    &:focus {
+      /* stylelint-disable plugin/no-unsupported-browser-features */
+      // Removing unmerited outline
+      outline: 0;
+      /* stylelint-enable */
+    }
+  }
+}
+
+abbr {
+  // font-family: 'Vollkorn SC', serif;
+  // font-variant-caps: all-petite-caps;
+  font-variant-caps: all-small-caps;
+  font-weight: 700;
+}
+
+body {
+  background-color: $color-light-backgroud;
+  // background-color: $color-tuatara;
+  color: $color-steel;
+  // color: $color-white;
+  font-family: $system-ui;
+  font-size: 16px;
+  font-size: var(--base-font-size, 16px);
+  /* stylelint-disable plugin/no-unsupported-browser-features */
+  // Progressive enhancement for typography
+  // font-variant-alternates: character-variant(stacked-g);
+  font-variant-ligatures: common-ligatures no-contextual no-discretionary-ligatures;
+  font-variant-numeric: slashed-zero;
+  /* stylelint-enable */
+  line-height: 1.5;
+  margin: 0;
+  /* stylelint-disable plugin/no-unsupported-browser-features */
+  // Progressive enhancement for typography
+  text-rendering: optimizeLegibility;
+  /* stylelint-enable */
+}
+
+cite {
+  font-style: normal;
+}
+
+figcaption {
+  background-color: transparentize($color-black, 0.25);
+  bottom: -10rem;
+  color: $color-white;
+  font-family: $system-ui;
+  font-size: 0.875rem;
+  // line-height: 1.5;
+  line-height: 1.42857142857;
+  overflow: hidden;
+  padding: 0.5rem;
+  position: absolute;
+  transition: bottom 0.5s ease-in;
+  width: 100%;
+
+  @media (min-width: map-get($grid-breakpoints, 0)) {
+    font-size: 1rem;
+  }
+
+  @media (min-width: map-get($grid-breakpoints, 1)) {
+    font-size: 0.875rem;
+  }
+
+  a {
+    color: $color-white;
+    display: block;
+    padding: 0 0.5rem;
+
+    &:active,
+    &:focus {
+      color: $color-blue;
+      /* stylelint-disable plugin/no-unsupported-browser-features */
+      // Removing unmerited outline
+      outline: 0;
+      /* stylelint-enable */
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  // font-family: $system-ui;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 700;
+}
+
+h3 + ul {
+  margin: 1rem 0;
+}
+
+hr {
+  border-color: transparentize($color-black, 0.9);
+  border-style: solid;
+  border-width: 0 0 1px;
+  box-sizing: content-box;
+  height: 0;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  overflow: visible;
+}
+
+p {
+  margin: 1rem 0;
+}
+
+.lead {
+  /* stylelint-disable plugin/no-unsupported-browser-features */
+  // Progressive typographic enhancement
+  font-kerning: normal;
+  font-size: 1.25rem;
+  font-variant-ligatures: common-ligatures contextual discretionary-ligatures;
+  font-weight: 400;
+  /* stylelint-enable */
+}
+
+.main {
+  font-family: Vollkorn, serif;
+
+  .main__title {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: 300;
+  }
+}

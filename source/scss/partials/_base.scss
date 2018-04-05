@@ -1,0 +1,100 @@
+:root {
+  // --blue: #007bff;
+  // --indigo: #6610f2;
+  // --purple: #6f42c1;
+  // --pink: #e83e8c;
+  // --red: #dc3545;
+  // --orange: #fd7e14;
+  // --yellow: #ffc107;
+  // --green: #28a745;
+  // --teal: #20c997;
+  // --cyan: #17a2b8;
+  // --white: #fff;
+  // --gray: #6c757d;
+  // --gray-dark: #343a40;
+  // --primary: #007bff;
+  // --secondary: #6c757d;
+  // --success: #28a745;
+  // --info: #17a2b8;
+  // --warning: #ffc107;
+  // --danger: #dc3545;
+  // --light: #f8f9fa;
+  // --dark: #343a40;
+  --base-font-size: 16px;
+  --breakpoint-0: 0;
+  --breakpoint-1: 576px;
+  --breakpoint-2: 768px;
+  --breakpoint-3: 992px;
+  --breakpoint-4: 1200px;
+  --font-family-monospace:
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    'Liberation Mono',
+    'Courier New',
+    monospace;
+  --font-family-sans-serif:
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen-Sans,
+    Ubuntu,
+    Cantarell,
+    'HelveticaNeue-Light',
+    'Helvetica Neue Light',
+    'Helvetica Neue',
+    Helvetica,
+    Arial,
+    'Lucida Grande',
+    sans-serif;
+}
+
+// Variables
+
+/* stylelint-disable plugin/no-unsupported-browser-features */
+$container-padding: 0;
+$container-margin: 0 auto;
+$container-max-widths: (
+  0: 320px, // xs
+  1: 540px, // sm
+  2: 720px, // md
+  3: 960px, // lg
+  4: 1140px // xl
+);
+$grid-breakpoints: (
+  0: 0, // xs
+  1: 576px, // sm
+  2: 768px, // md
+  3: 992px, // lg
+  4: 1200px // xl
+);
+$grid-gutter-width: 30px;
+$grid-columns: 12;
+$print-body-min-width: map-get($grid-breakpoints, 3);
+$color-black: #000;
+$color-blue: rgb(2, 107, 197); // #026bc5;
+$color-copyright: #6c6c6c;
+$color-grey: rgb(137, 137, 137); // #898989;
+$color-iron: #ccc;
+$color-light-backgroud: #eee;
+$color-light-blue: #b3d4fc;
+$color-social-dribbble: #ef7aa7;
+$color-social-facebook: #4c70ba;
+$color-social-github: #689cd0;
+$color-social-linkedin: #0099e8;
+$color-social-twitter: #83c3f3;
+$color-social-youtube: #e23e3d;
+$color-steel: #525252;
+$color-tomato: tomato;
+$color-tuatara: #363636;
+$color-white: #fff;
+$system-ui:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Oxygen-Sans,Ubuntu,Cantarell,'HelveticaNeue-Light','Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;
+/* stylelint-enable */
+
+html {
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparentize($color-black, 0);
+  // text-size-adjust: 100%;
+}

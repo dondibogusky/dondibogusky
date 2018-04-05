@@ -1,0 +1,44 @@
+footer {
+  font-family: Hack, monospace;
+  font-weight: 400;
+}
+
+.footer__copyright {
+  color: $color-copyright;
+  text-align: center;
+}
+
+.footer__social-links,
+.footer__thank-you {
+  border-top: 1px solid transparentize($color-black, 0.9);
+  padding-top: 1rem;
+
+  a {
+    transition: color 0.25s ease, background-color 0.25s ease, text-shadow 0.25s ease;
+
+    &:hover {
+      text-shadow: 0 1px 1px transparentize($color-black, 0.75);
+    }
+  }
+}
+
+.footer__social-links {
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+  text-align: center;
+
+  @media (min-width: map-get($grid-breakpoints, 0)) {
+    font-size: 1rem;
+  }
+
+  @media (min-width: map-get($grid-breakpoints, 1)) {
+    font-size: 0.875rem;
+  }
+}
+
+.footer__thank-you {
+
+  p {
+    margin-top: 0;
+  }
+}

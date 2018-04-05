@@ -1,0 +1,94 @@
+@media only print {
+
+  /* stylelint-disable plugin/no-unsupported-browser-features */
+
+  *,
+  *::before,
+  *::after {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  /* stylelint-enable */
+
+  @page {
+    margin: 0.5in 1in;
+  }
+
+  body {
+    background-color: $color-white !important;
+    color: $color-black !important;
+    min-width: $print-body-min-width !important;
+  }
+
+  a[href^='http']::after {
+    content: ' (' attr(href) ')';
+  }
+
+  figcaption {
+    display: none;
+  }
+
+  img {
+    /* stylelint-disable plugin/no-unsupported-browser-features */
+    // Progressive enhancement
+    break-inside: avoid;
+    /* stylelint-enable */
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    /* stylelint-disable plugin/no-unsupported-browser-features */
+    break-after: avoid;
+    /* stylelint-enable */
+  }
+
+  .container {
+    min-width: $print-body-min-width !important;
+  }
+
+  .portfolio {
+
+    .portfolio__piece {
+      background-color: transparent;
+      border: 0 !important;
+      display: block;
+      max-height: 1.5in;
+      max-width: 320px;
+    }
+  }
+
+  .print-only {
+    display: block;
+
+    a[href^='http']::after {
+      content: '';
+    }
+  }
+
+  .screen-only,
+  .screen-only * {
+    display: none !important;
+  }
+
+  .slider {
+    display: none;
+  }
+}
+
+@media only screen {
+
+  .print-only {
+    display: none;
+  }
+
+  .screen-only {
+    display: block;
+  }
+}
