@@ -5,18 +5,20 @@
 // import gulp from 'gulp';
 const gulp = require('gulp');
 
-const del = require('del');
-const browserSync = require('browser-sync');
-const sourcemaps = require('gulp-sourcemaps');
-const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
+const browserSync = require('browser-sync');
+const critical = require('critical').stream;
+const del = require('del');
+const log = require('fancy-log');
+const sass = require('gulp-sass');
+const sourcemaps = require('gulp-sourcemaps');
 
-const clean = () => del('./dist/css/');
+const clean = () => del('./build/css/');
 
 const paths = {
   styles: {
-    scss: './src/scss/**/*.scss',
-    dest: './dist/css/'
+    scss: './source/scss/**/*.scss',
+    dest: './build/css/'
   }
 };
 
@@ -42,7 +44,7 @@ function reload(done) {
 function serve(done) {
   server.init({
     server: {
-      baseDir: "./dist/"
+      baseDir: "./build/"
     },
     notify: false,
     open: false
@@ -54,7 +56,7 @@ gulp.task('stylelint', function lintCssTask() {
   const gulpStylelint = require('gulp-stylelint');
 
   return gulp
-    .src('./src/scss/main.scss')
+    .src('./source/scss/main.scss')
     .pipe(gulpStylelint({
       failAfterError: true,
       reportOutputDir: 'reports/lint',
@@ -64,6 +66,13 @@ gulp.task('stylelint', function lintCssTask() {
       ],
       debug: true
     }));
+});
+
+gulp.task('critical', function () {
+  return gulp.src('build/*.html')
+    .pipe(critical({base: 'build/', inline: true, css: ['build/css/main.css']}))
+    .on('error', function(err) { log.error(err.message); })
+    .pipe(gulp.dest('build'));
 });
 
 const watch = () => gulp.watch(paths.styles.scss, gulp.series(styles, reload));
