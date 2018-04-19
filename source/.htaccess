@@ -19,17 +19,17 @@
   Header set X-XSS-Protection "1; mode=block"
 </IfModule>
 <IfModule mod_headers.c>
-  Header set Content-Security-Policy "\
-    default-src ;\
-    base-uri 'self';\
-    font-src 'self' https://fonts.gstatic.com;\
-    form-action 'self';\
-    frame-ancestors 'none';\
-    frame-src 'self' https://platform.twitter.com;\
-    img-src 'self' data: https://i.ytimg.com https://stats.g.doubleclick.net https://www.google-analytics.com https://www.googletagmanager.com;\
-    object-src 'none';\
-    script-src 'self' https://code.jquery.com https://use.fontawesome.com https://www.google-analytics.com https://www.googletagmanager.com/gtag/js https://www.googletagmanager.com/gtm.js https://ajax.googleapis.com https://platform.twitter.com 'sha256-cWq/MoHnC3rdTYhrBfDu59doEyAZHX4k56UrmN3cFiM=' 'sha256-evz5Hv4VNkw3MmX+tZb75ljXU38Rm11E85x2ExlGTfM=' 'sha256-QnSXIkRxvs0w/hJ9VDeLbBG3ivUDQxyjk4OdrrJd/1s=' 'sha256-8QW7Lr6UbUrXlB1azrBakYA/2kZfxwa9brTTtVkC9dg=' 'sha256-9/5YT2ZmRnl+RgEgOcwKb09KYZ65hYlBmW3Hnsa/9LU=' 'sha256-Cu3Qu/BQoCpZt92yN04GGHg5dexLMgx42fvCYOF19ww=' 'sha256-m1CtHI92UmaOHRBXormHu/6QEkudskHiek4L59+lHeg=' 'sha256-K0ZFL1u/pF6SvId+XmKpD5gPcuT9ftetHpAsZFliko0=' 'sha256-BGgnGCcsMPmtBT3lFtmnV9sCa7OvtTvD0IfYyIIiTpw=' 'sha256-PIx43kaIMxA4i2HzzeKU+8H65hpTHzT3YhadngXC9M8=';\
-    style-src 'self' https://use.fontawesome.com https: https://fonts.googleapis.com 'sha256-XG/kZEuMexJnKxWU9PhkQXr+2ImLpnINQhLDYFSNrw4=' 'sha256-sC9roG6gjsOxA1jz9CZn8bm+B+LEew4Jef0kbhK/zYY=' 'sha256-+5pErX1Ry6fZtjCK9o3yk9BOud2PeksUmXxi6q9MnO0=' 'sha256-cWq/MoHnC3rdTYhrBfDu59doEyAZHX4k56UrmN3cFiM=' 'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=' 'sha256-qjhGsGw/991oxZHLvOTMZTAPIPBtoh3oEIuYckAI1eA=' 'sha256-sKzaiJrJyJMbRx9E5at9V94KO1buQ74A6k1sC3iSEUI=' 'sha256-bviLPwiqrYk7TOtr5i2eb7I5exfGcGEvVuxmITyg//c=' 'sha256-4NRibc1ERoF9CamRV3seWWA1si9WoUButIBbHH1DkR8=' 'sha256-jo6xU8LZ37B95oD5/PHtkicbZfpIn6aJPu4uG7C5oGI=';"
+  # Header set Content-Security-Policy "\
+  #   default-src 'none';\
+  #   base-uri 'self';\
+  #   font-src 'self' https://fonts.gstatic.com;\
+  #   form-action 'self';\
+  #   frame-ancestors 'none';\
+  #   frame-src 'self' https://platform.twitter.com;\
+  #   img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com;\
+  #   object-src 'none';\
+  #   script-src 'self' 'unsafe-inline' https://code.jquery.com/jquery-3.3.1.slim.min.js https://use.fontawesome.com/releases/v5.0.9/js/all.js https://www.google-analytics.com/analytics.js https://www.google-analytics.com/plugins/ua/linkid.js https://www.googletagmanager.com/gtm.js 'sha256-cWq/MoHnC3rdTYhrBfDu59doEyAZHX4k56UrmN3cFiM=' 'sha256-evz5Hv4VNkw3MmX+tZb75ljXU38Rm11E85x2ExlGTfM=' 'sha256-QnSXIkRxvs0w/hJ9VDeLbBG3ivUDQxyjk4OdrrJd/1s=' 'sha256-8QW7Lr6UbUrXlB1azrBakYA/2kZfxwa9brTTtVkC9dg=' 'sha256-9/5YT2ZmRnl+RgEgOcwKb09KYZ65hYlBmW3Hnsa/9LU=' 'sha256-Cu3Qu/BQoCpZt92yN04GGHg5dexLMgx42fvCYOF19ww=' 'sha256-m1CtHI92UmaOHRBXormHu/6QEkudskHiek4L59+lHeg=' 'sha256-K0ZFL1u/pF6SvId+XmKpD5gPcuT9ftetHpAsZFliko0=' 'sha256-BGgnGCcsMPmtBT3lFtmnV9sCa7OvtTvD0IfYyIIiTpw=' 'sha256-PIx43kaIMxA4i2HzzeKU+8H65hpTHzT3YhadngXC9M8=' 'sha256-Qz/4BJaqSMtwj8L9yNtqjl/4QCJDb7fExDMWKfuTr4s=' 'sha256-jwXvVGgAQpYgpkG2PyMVRUzkG9T6YNF0GMNQUBt+5Ww=' 'sha256-saKE4ZKEOxoQP+IObFbsdMngDcEElM14FYGcSRJ8jaU=' 'strict-dynamic';\
+  #   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ 'sha256-sC9roG6gjsOxA1jz9CZn8bm+B+LEew4Jef0kbhK/zYY=' 'sha256-+5pErX1Ry6fZtjCK9o3yk9BOud2PeksUmXxi6q9MnO0=' 'sha256-cWq/MoHnC3rdTYhrBfDu59doEyAZHX4k56UrmN3cFiM=' 'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=' 'sha256-qjhGsGw/991oxZHLvOTMZTAPIPBtoh3oEIuYckAI1eA=' 'sha256-sKzaiJrJyJMbRx9E5at9V94KO1buQ74A6k1sC3iSEUI=' 'sha256-bviLPwiqrYk7TOtr5i2eb7I5exfGcGEvVuxmITyg//c=' 'sha256-4NRibc1ERoF9CamRV3seWWA1si9WoUButIBbHH1DkR8=' 'sha256-jo6xU8LZ37B95oD5/PHtkicbZfpIn6aJPu4uG7C5oGI=' 'sha256-Qz/4BJaqSMtwj8L9yNtqjl/4QCJDb7fExDMWKfuTr4s=' 'sha384-0+SSEF0n7uEHa8XJ0S6BHhTB3g/kw/WBOZMIrg3aNkj5erRm06P7qi7SR8p5sFMk';"
   <FilesMatch "404.html">
     Header set Content-Security-Policy "\
       default-src 'none';\

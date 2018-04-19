@@ -1,29 +1,3 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-.blur-up {
-  /* stylelint-disable plugin/no-unsupported-browser-features */
-  // Progressive enhansment nice to have filter
-  filter: blur(10px);
-  opacity: 0;
-  /* stylelint-enable */
-  transition: filter opacity 300ms;
-
-  &.lazyloading,
-  &.lazyloaded {
-    /* stylelint-disable plugin/no-unsupported-browser-features */
-    // Progressive enhansment nice to have filter
-    filter: blur(0);
-    opacity: 1;
-    /* stylelint-enable */
-  }
-}
-
 .fade-in {
   animation: fade-in ease-in 1;
   animation-duration: 1s;
@@ -35,13 +9,45 @@
   }
 }
 
-.preload * {
-  transition: none !important;
+.no-js {
+
+  .preview {
+    display: none;
+  }
+}
+
+// .preload * {
+//   transition: none !important;
+// }
+
+// .preload.medium-zoom--open * {
+//   transition: inherit !important;
+// }
+
+.supports.cssfilters {
+  /* stylelint-disable plugin/no-unsupported-browser-features */
+  @supports (filter: blur()) {
+
+    .blur-up {
+      // Progressive enhansment nice to have filter
+      filter: blur(20px);
+      opacity: 0;
+
+      &.lazyloading,
+      &.lazyloaded {
+        // Progressive enhansment nice to have filter
+        filter: blur(0);
+        opacity: 1;
+        transition: all 200ms ease-in;
+      }
+    }
+  }
+  /* stylelint-enable */
 }
 
 ::selection {
-  // background-color: $color-light-blue;
   background-color: lighten($color-blue, 50%);
+  color: inherit;
   text-shadow: none;
 }
 
@@ -62,12 +68,12 @@
   }
 }
 
-/* stylelint-disable plugin/no-unsupported-browser-features */
-@media screen and (min-resolution: 2dppx) {
+/* stylelint-disable media-feature-name-no-unknown */
+@media (prefers-reduced-motion: reduce) {
 
-  body {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
+  * {
+    animation: none !important;
+    transition: none !important;
   }
 }
 /* stylelint-enable */

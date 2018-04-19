@@ -19,3 +19,9 @@
   top: 1px;
   width: 1px;
 }
+
+.clearfix::after {
+  clear: both;
+  content: '';
+  display: table;
+}

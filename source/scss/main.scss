@@ -1,16 +1,19 @@
 /*! ¯\_(ツ)_/¯ */
 
-@import 'vendor/bootstrap/mixins/grid';
-@import 'vendor/normalize/normalize';
-@import 'vendor/slick/slick';
-
 /*! Do It */
 
-@import 'partials/base';
+// Vendor
+@import 'vendor/normalize/normalize';
+@import 'vendor/bootstrap/mixins/grid';
+@import 'vendor/fontawesome/fa-svg-with-js';
+// Priority
+@import 'partials/variables';
+@import 'partials/mixins';
+@import 'partials/reboot';
+@import 'partials/utility';
+// Standard
 @import 'partials/colors';
-@import 'partials/display';
 @import 'partials/effects';
-@import 'partials/fontawesome';
 @import 'partials/fonts';
 @import 'partials/footer';
 @import 'partials/grid';

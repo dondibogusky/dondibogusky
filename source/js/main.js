@@ -27,7 +27,6 @@ false);
 
 document.getElementById('contact').innerHTML = '\u0068\u0065\u006c\u006c\u006f\u0040\u0064\u006f\u006e\u0064\u0069\u002e\u006f\u0069\u0062\u002e\u0063\u006f\u006d';
 
-// Test via a getter in the options object to see if the passive property is accessed
 var supportsPassive = false;
 try {
   var opts = Object.defineProperty({}, 'passive', {
@@ -39,5 +38,10 @@ try {
   window.removeEventListener("testPassive", null, opts);
 } catch (e) {}
 
-// Use our detect's results. passive applied if supported, capture will be false either way.
-elem.addEventListener('touchstart', fn, supportsPassive ? { passive: true } : false);
+function isIE () {
+  var myNav = navigator.userAgent.toLowerCase();
+  return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
+}
+if (isIE () && isIE () < 11) {
+  document.body.innerHTML += '<div style="margin:20px;"><p>Sorry, this site doesn’t support older versions of Internet Explorer. Use Edge or try again using Chrome or Firefox. Apologies for the inconvenience.<p></div>';
+}

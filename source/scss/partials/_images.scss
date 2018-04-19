@@ -1,38 +1,16 @@
-figure {
-  display: inline-block;
-  height: 100%;
-  margin: 0;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-
-  picture {
-    display: inline-block;
-    height: 100%;
-    max-width: 100%;
-    transform: scale(1);
-    transition: transform 0.3s;
-  }
-
-  &:hover {
-
-    figcaption {
-      bottom: 0;
-    }
-
-    picture {
-      transform: scale(1.1);
-      transition: transform 0.3s;
-    }
-  }
-}
-
-picture {
-  display: inline;
-  overflow: hidden;
-}
-
-.img-fluid {
+img,
+video {
+  display: block;
   height: auto;
   max-width: 100%;
 }
+
+// picture {
+//   display: inline;
+//   overflow: hidden;
+// }
+
+// .img-fluid {
+//   height: auto;
+//   max-width: 100%;
+// }

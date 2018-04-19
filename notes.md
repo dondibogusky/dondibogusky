@@ -10,10 +10,49 @@
 - src, for, type, href, value
 - title, alt
 - role, aria-*
+- tabindex
 
 ### CSS Declaration Order
 
 Alphabetical
+
+### CSS Critical Path
+
+```sh
+critical build/resume/index.html build/index.html --base build --width 1201 --minify true > critical.css && echo ".fade-in{opacity:0}" >> critical.css
+```
+
+### Modernizr
+
+```sh
+modernizr -c helpers/modernizr-critical-path.json -d source/js/modernizr-critical-path.js
+```
+
+### SCSS Partials
+
+**Priority**
+
+- variables - Sass variables
+- mixins - Sass mixin functions
+- reset - consistent baseline styles
+- utility - fixes/hacks for browser quirks and accessibility
+
+**Standard**
+
+- colors - color palette
+- effects - transitions
+- flickity - slider styles, required by [Flickity](https://flickity.metafizzy.co/)
+- fontawesome - icon styles, required by [Font Awesome](https://fontawesome.com/)
+- fonts - web fonts, required by [Google Fonts](https://fonts.google.com/)
+- footer - parts of the footer
+- grid - grid system
+- header - parts of the header
+- images - image styles
+- portfolio - portfolio section
+- print - for the printer
+- slider - slider section
+- typography - arranging textual elements or processing data
+- zoom - transitions for images, required by [Medium Zoom](https://medium-zoom.francoischalifour.com/)
 
 ## Image Sizes
 
@@ -46,7 +85,7 @@ Alphabetical
 - col-3                  = 729.984px
 - col≈1                  = 236px = base
 
-### [Slider](https://kenwheeler.github.io/slick/)
+### Slider
 
 - `slider__slide@xs`     <= 481px@1/1
 - `slider__slide@sm`     =  408px@1/1

@@ -1,6 +1,8 @@
 footer {
   font-family: Hack, monospace;
   font-weight: 400;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .footer__copyright {
@@ -14,17 +16,20 @@ footer {
   padding-top: 1rem;
 
   a {
-    transition: color 0.25s ease, background-color 0.25s ease, text-shadow 0.25s ease;
+    transform: scale(1);
+    transition: color 0.25s ease, background-color 0.25s ease, text-shadow 0.25s ease, transform 0.3s ease;
 
     &:hover {
       text-shadow: 0 1px 1px transparentize($color-black, 0.75);
+      transform: scale(1.1);
+      transition: transform 0.3s;
     }
   }
 }
 
 .footer__social-links {
   font-size: 0.875rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   text-align: center;
 
   @media (min-width: map-get($grid-breakpoints, 0)) {
@@ -36,7 +41,7 @@ footer {
   }
 }
 
-.footer__thank-you {
+.footer__copyright {
 
   p {
     margin-top: 0;

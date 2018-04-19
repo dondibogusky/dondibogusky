@@ -71,7 +71,7 @@
       white-space: nowrap;
       width: 23px;
 
-      .supports & {
+      .supports.cssmask & {
         /* stylelint-disable plugin/no-unsupported-browser-features */
         // Progressive enhancement
         @supports (mask-image: url()) {

@@ -54,32 +54,13 @@
 // Variables
 
 /* stylelint-disable plugin/no-unsupported-browser-features */
-$container-padding: 0;
-$container-margin: 0 auto;
-$container-max-widths: (
-  0: 320px, // xs
-  1: 540px, // sm
-  2: 720px, // md
-  3: 960px, // lg
-  4: 1140px // xl
-);
-$grid-breakpoints: (
-  0: 0, // xs
-  1: 576px, // sm
-  2: 768px, // md
-  3: 992px, // lg
-  4: 1200px // xl
-);
-$grid-gutter-width: 30px;
-$grid-columns: 12;
-$print-body-min-width: map-get($grid-breakpoints, 3);
+// Priority
 $color-black: #000;
 $color-blue: rgb(2, 107, 197); // #026bc5;
 $color-copyright: #6c6c6c;
 $color-grey: rgb(137, 137, 137); // #898989;
 $color-iron: #ccc;
 $color-light-backgroud: #eee;
-$color-light-blue: #b3d4fc;
 $color-social-dribbble: #ef7aa7;
 $color-social-facebook: #4c70ba;
 $color-social-github: #689cd0;
@@ -90,11 +71,43 @@ $color-steel: #525252;
 $color-tomato: tomato;
 $color-tuatara: #363636;
 $color-white: #fff;
-$system-ui:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Oxygen-Sans,Ubuntu,Cantarell,'HelveticaNeue-Light','Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;
+$paragraph-color: $color-steel;
+$paragraph-line-height: 1.5;
+$paragraph-margin: 1.25rem;
+$paragraph-size: 1rem;
+$system-ui: system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Oxygen-Sans,Ubuntu,Cantarell,'HelveticaNeue-Light','Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;
+// Standard
+$base-font-size: 16px;
+$blockquote-color: $color-steel;
+$blockquote-line-height: 1.5;
+$blockquote-margin: $paragraph-margin * 1.5;
+$blockquote-size: rem(23px);
+$border-color: transparentize($color-black, 0.9);
+$container-margin: 0 auto;
+$container-max-widths: (
+  0: 320px, // xs
+  1: 540px, // sm
+  2: 720px, // md
+  3: 960px, // lg
+  4: 1140px // xl
+);
+$container-padding: 0;
+$font-family-base: $system-ui;
+$font-weight-bold: 700;
+$grid-breakpoints: (
+  0: 0, // xs
+  1: 576px, // sm
+  2: 768px, // md
+  3: 992px, // lg
+  4: 1200px // xl
+);
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+$header-color: $color-steel;
+$header-line-height: 1.25;
+$header-margin: $paragraph-margin * 1.2;
+$header-size: rem(40px);
+$hr-margin: 1.875rem;
+$link-color: $color-blue;
+$print-body-min-width: map-get($grid-breakpoints, 3);
 /* stylelint-enable */
-
-html {
-  -ms-overflow-style: scrollbar;
-  -webkit-tap-highlight-color: transparentize($color-black, 0);
-  // text-size-adjust: 100%;
-}

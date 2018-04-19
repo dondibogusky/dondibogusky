@@ -17,11 +17,37 @@
   @media (min-width: map-get($grid-breakpoints, 3)) {
     @include make-col(8);
     @include make-col-offset(2);
+
+    hr &,
+    main & h2,
+    main & h3,
+    main & h4,
+    main & p,
+    main & ul {
+      padding: 0 1.75vw;
+    }
+
+    header & {
+      padding: 0 3vw;
+    }
   }
 
   @media (min-width: map-get($grid-breakpoints, 4)) {
     @include make-col(8);
     @include make-col-offset(2);
+
+    hr &,
+    main & h2,
+    main & h3,
+    main & h4,
+    main & p,
+    main & ul {
+      padding: 0 6vw;
+    }
+
+    header & {
+      padding: 0 7vw;
+    }
   }
 }
 

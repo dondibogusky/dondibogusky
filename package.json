@@ -1,6 +1,6 @@
 {
   "name": "dondibogusky",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Website for Dondi Bogusky",
   "main": "build/index.html",
   "scripts": {
@@ -12,7 +12,7 @@
   "repository": "https://github.com/dondibogusky/dondibogusky.git",
   "private": true,
   "dependencies": {
-    "bootstrap": "^4.0.0",
+    "bootstrap": "^4.1.0",
     "hack-font": "^3.3.0",
     "html5-boilerplate": "^6.0.1",
     "jquery": "^3.3.1",
@@ -23,7 +23,8 @@
     "typeface-pt-sans-caption": "0.0.54",
     "typeface-pt-sans-narrow": "0.0.54",
     "typeface-vollkorn": "0.0.54",
-    "typeface-vollkorn-sc": "0.0.54"
+    "typeface-vollkorn-sc": "0.0.54",
+    "uncss": "^0.16.2"
   },
   "devDependencies": {
     "ajv": "^6.4.0",
@@ -52,11 +53,11 @@
     "gulp-cli": "^2.0.1",
     "gulp-concat": "^2.6.1",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.2.1",
+    "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-stylelint": "^7.0.0",
     "html-loader": "^0.5.5",
-    "html-minifier": "^3.5.12",
+    "html-minifier": "^3.5.14",
     "imagemin": "^5.3.1",
     "imagemin-webp": "^4.1.0",
     "lazysizes": "^4.0.2",
@@ -69,8 +70,23 @@
     "stylelint": "^9.1.3",
     "stylelint-no-unsupported-browser-features": "^3.0.0",
     "stylelint-order": "^0.8.1",
+    "uglify": "^0.1.5",
+    "uglify-es": "^3.3.10",
     "webpack": "^4.3.0",
     "webpack-cli": "^2.0.13"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ],
+    "plugins": [
+      "transform-es2015-modules-commonjs"
+    ]
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
   },
   "browserslist": [
     "> 2%",

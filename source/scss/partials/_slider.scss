@@ -1,140 +1,42 @@
-.slick-arrow {
-  background-size: 20px 20px;
-  border: 0;
-  color: transparent;
-  cursor: pointer;
-  display: none;
-  font-size: 0;
-  height: 22px;
-  line-height: 0;
-  margin: -10px 1px 0;
-  /* stylelint-disable plugin/no-unsupported-browser-features */
-  // Removing unmerited outline
-  outline: 0;
-  /* stylelint-enable */
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  text-indent: 100%;
-  top: 50%;
-  visibility: hidden;
-  white-space: nowrap;
-  width: 22px;
-  z-index: 1;
-
-  .slick-initialized & {
-    display: inline-block;
-    visibility: visible;
+.slider {
+  @media screen and (min-width: map-get($grid-breakpoints, 2)) {
+    height: 0;
   }
-
-  @media (min-width: map-get($grid-breakpoints, 0)) {
-    font-size: 1rem;
-  }
-
-  @media (min-width: map-get($grid-breakpoints, 1)) {
-    font-size: 0;
-  }
-
-  .medium-zoom--open & {
-    transition: all 300ms;
-    z-index: 0;
-  }
-}
-
-.slick-next {
-  background-image: url("data:image/svg+xml,%3Csvg%20width=%2220%22%20height=%2220%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath%20d=%22M10%200c5.524%200%2010%204.476%2010%2010s-4.476%2010-10%2010S0%2015.524%200%2010%204.476%200%2010%200zm4.593%209.315L9.129%203.85a.964.964%200%200%200-1.367%200l-.685.685a.964.964%200%200%200%200%201.367L11.173%2010l-4.096%204.097a.964.964%200%200%200%200%201.367l.685.685a.964.964%200%200%200%201.367%200l5.464-5.464a.969.969%200%200%200%200-1.37z%22%20fill=%22%23525252%22%20fill-rule=%22nonzero%22/%3E%3C/svg%3E");
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-
-  .supports & {
-
-    /* stylelint-disable plugin/no-unsupported-browser-features */
-    @supports (mask-image: url()) {
-      background-color: $color-blue;
-      background-image: none;
-      mask-image: url('/img/slider-chevron-circle-right.svg');
-      mask-position: 50% 50%;
-      mask-repeat: no-repeat;
-
-      &:hover {
-        background-color: $color-tomato;
-      }
-    }
-    /* stylelint-enable */
-  }
-
-  @media (min-width: map-get($grid-breakpoints, 0)) {
-    right: 0;
-  }
-
-  @media (min-width: map-get($grid-breakpoints, 1)) {
-    right: -24px;
-  }
-}
-
-.slick-prev {
-  background-image: url("data:image/svg+xml,%3Csvg%20width=%2220%22%20height=%2220%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath%20d=%22M10%2020C4.476%2020%200%2015.524%200%2010S4.476%200%2010%200s10%204.476%2010%2010-4.476%2010-10%2010zm-4.593-9.315l5.464%205.464a.964.964%200%200%200%201.367%200l.685-.685a.964.964%200%200%200%200-1.367L8.827%2010l4.096-4.097a.964.964%200%200%200%200-1.367l-.685-.685a.964.964%200%200%200-1.367%200L5.407%209.315a.969.969%200%200%200%200%201.37z%22%20fill=%22%23525252%22%20fill-rule=%22nonzero%22/%3E%3C/svg%3E");
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  // display: none;
-  // opacity: 0;
-  // transition: opacity 0.25s ease;
-
-  .slick-initialized & {
-    // display: block;
-    // opacity: 1;
-    // transition: opacity 0.25s ease;
-  }
-
-  .supports & {
-    /* stylelint-disable plugin/no-unsupported-browser-features */
-    // Progressive enhancement
-    @supports (mask-image: url()) {
-      background-color: $color-blue;
-      background-image: none;
-      mask-image: url('/img/slider-chevron-circle-left.svg');
-      mask-position: 50% 50%;
-      mask-repeat: no-repeat;
-
-      &:hover {
-        background-color: $color-tomato;
-      }
-    }
-    /* stylelint-enable */
-  }
-
-  @media (min-width: map-get($grid-breakpoints, 0)) {
-    left: 0;
-  }
-
-  @media (min-width: map-get($grid-breakpoints, 1)) {
-    left: -24px;
-  }
-}
-
-.slick-slide {
-  background-color: transparentize($color-black, 0.25);
-  font-size: 0;
+  height: auto;
+  // min-height: 162px;
   text-align: center;
+}
 
-  @media (min-width: map-get($grid-breakpoints, 0)) {
-    margin: 0 32px;
+.slider__slide {
+  @media screen and (min-width: map-get($grid-breakpoints, 2)) {
+    float: left;
+    margin-bottom: 12px;
+    margin-right: 12px;
+    max-width: 234px;
+    width: 33.3334%;
+  }
+  box-shadow: 0 8px 16px -8px rgba(150, 150, 150, 0.3), 0 1px 2px rgba(0, 0, 0, 0.5);
+  font-size: 0;
+  height: 150px;
+  margin: 0 auto 12px;
+  max-height: 150px;
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+
+  & > a {
+    display: block;
+    overflow: hidden;
   }
 
-  @media (min-width: map-get($grid-breakpoints, 1)) {
-    margin: 0 6px;
-  }
-
-  &:active,
-  &:focus {
-    /* stylelint-disable plugin/no-unsupported-browser-features */
-    // Removing unmerited outline
-    outline: 0;
-    /* stylelint-enable */
+  & > figure {
+    display: block;
+    padding: 2px;
   }
 
   a {
     border: 1px solid $color-blue;
+    margin: 0 auto;
     max-height: 150px;
 
     &:active,
@@ -151,76 +53,41 @@
     }
   }
 
-  figure {
-    max-height: 148px;
+  figcaption {
 
     a {
       border: 0;
-      color: $color-white;
-
-      &:hover {
-        border: 0;
-        color: $color-tomato;
-        text-decoration: underline transparentize($color-blue, 0.5) solid;
-      }
 
       &:active,
-      &:focus {
+      &:focus,
+      &:hover {
         border: 0;
-        /* stylelint-disable plugin/no-unsupported-browser-features */
-        // Removing unmerited outline
-        outline: 0;
-        /* stylelint-enable */
       }
     }
   }
 
+  figure {
+    background-color: transparentize($color-black, 0.25);
+    // height: 0;
+    min-height: 150px;
+
+    picture {
+      left: 0;
+      position: absolute;
+      width: 100%;
+    }
+  }
+
   img {
+    // do not set height
     display: inline-block;
     margin: 0;
   }
 }
 
-.slick-track {
-  margin-bottom: 10px;
-}
+@media only print {
 
-.slider {
-  margin: 0;
-  opacity: 0;
-  padding: 0;
-  text-align: center;
-  transition: height opacity 0.25s ease-in;
-
-  button {
-    // appearance: none;
+  .slider {
     display: none;
-  }
-
-  .slider__slide {
-    box-shadow: 0 8px 16px -8px rgba(150, 150, 150, 0.3), 0 1px 2px rgba(0, 0, 0, 0.5);
-    display: none;
-
-    & > a {
-      display: block;
-    }
-
-    & > figure {
-      // border: 1px solid pink;
-      display: block;
-      max-height: 150px;
-      padding: 2px;
-    }
-  }
-
-  &.slick-initialized {
-    margin: 0 -6px;
-    max-height: 154px;
-    opacity: 1;
-    transition: height opacity 0.25s ease-in;
-
-    .slider__slide {
-      display: block;
-    }
   }
 }
