@@ -25,7 +25,7 @@ window.addEventListener('load',
   },
 false);
 
-document.getElementById('contact').innerHTML = '\u0068\u0065\u006c\u006c\u006f\u0040\u0064\u006f\u006e\u0064\u0069\u002e\u006f\u0069\u0062\u002e\u0063\u006f\u006d';
+document.getElementById('contact').innerHTML = '\u0068\u0065\u006c\u006c\u006f\u0040\u0064\u006f\u006e\u0064\u0069\u002e\u0063\u0063';
 
 var supportsPassive = false;
 try {
