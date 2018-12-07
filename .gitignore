@@ -10,3 +10,4 @@ webpack.config.js
 yarn.lock
 /.config.codekit3
 /critical.css
+.vscode/settings.json
