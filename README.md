@@ -2,7 +2,7 @@
 - 👀 I’m interested in web design, development, and digital marketing.
 - 🌱 I’m currently learning Tailwind CSS, Astro, Vue, Vite, Nuxt, and Webflow. 
 - 💞️ I’m looking to collaborate on building modern websites.
-- 📫 How to reach me, email hello @ dondi.cc
+- 📫 How to reach me, email hello @ dondi.cc (take out the spaces after hello and before dondi.cc).
 
 <!---
 dondibogusky/dondibogusky is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
